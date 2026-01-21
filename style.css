@@ -86,3 +86,21 @@ button:hover {
   color: #003300;
   font-weight: bold;
 }
+.header {
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 42px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: #00e676;
+}
+
+.slogan {
+  font-size: 16px;
+  opacity: 0.9;
+}
