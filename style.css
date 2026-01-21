@@ -104,3 +104,23 @@ button:hover {
   font-size: 16px;
   opacity: 0.9;
 }
+.decoracion span {
+  position: fixed;
+  font-size: 60px;
+  opacity: 0.08;
+}
+
+.decoracion span:nth-child(1) {
+  top: 20%;
+  left: 10%;
+}
+
+.decoracion span:nth-child(2) {
+  top: 60%;
+  right: 15%;
+}
+
+.decoracion span:nth-child(3) {
+  bottom: 10%;
+  left: 50%;
+                   }
