@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sortea3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Sortea3</h1>
+<p>El número que sale 3 veces gana</p>
+
+<hr>
+
+<h2>Sorteo activo</h2>
+<p><strong>Premio:</strong> TV Smart 50"</p>
+<p><strong>Precio por número:</strong> $1.000</p>
+<p><strong>Números disponibles:</strong> 1 al 20</p>
+
+<hr>
+
+<h3>🎱 Bolillero</h3>
+<button id="btnBolilla">Sacar bolilla</button>
+<p id="bolillaActual"></p>
+<p id="contador"></p>
+<p id="ganador"></p>
+
+<hr>
+
+<h3>Elegí tu número</h3>
+<p id="mensaje"></p>
+
+<div id="numeros"></div>
+
+<div id="pago" style="display:none;">
+  <h3>Instrucciones de pago</h3>
+  <p><strong>Alias:</strong> sortea3.alias</p>
+  <p><strong>Monto:</strong> $1.000</p>
+
+  <input type="file" id="comprobante" accept="image/*">
+  <br><br>
+  <button id="btnPago">Enviar comprobante</button>
+</div>
+
+<script src="script.js"></script>
+<script src="bolillero.js"></script>
+</body>
+</html>
