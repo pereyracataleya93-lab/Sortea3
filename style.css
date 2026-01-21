@@ -1,4 +1,50 @@
 body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+}
+h1 {
+  font-size: 42px;
+  margin-bottom: 5px;
+  color: #ffd700;
+  text-shadow: 2px 2px 5px black;
+}#pago, #bolillero {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 15px;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 400px;
+}button.disponible {
+  width: 55px;
+  height: 55px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: none;
+  margin: 6px;
+  cursor: pointer;
+  background-color: #eeeeee;
+  color: black;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button.disponible:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255,255,255,0.6);
+}button.pendiente {
+  background-color: gold;
+  color: black;
+}
+
+button.pagado {
+  background-color: #2196f3;
+  color: white;
+  cursor: not-allowed;
+}
+body {
   font-family: Arial, sans-serif;
   padding: 20px;
 }
