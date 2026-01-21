@@ -1,74 +1,88 @@
 body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f4c81, #1fa2ff);
+  color: white;
   margin: 0;
   padding: 20px;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: white;
   text-align: center;
 }
+
 h1 {
-  font-size: 42px;
+  font-size: 36px;
   margin-bottom: 5px;
-  color: #ffd700;
-  text-shadow: 2px 2px 5px black;
-}#pago, #bolillero {
-  background: rgba(0, 0, 0, 0.35);
-  padding: 15px;
-  border-radius: 15px;
-  margin: 20px auto;
-  max-width: 400px;
-}button.disponible {
-  width: 55px;
-  height: 55px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 50%;
+}
+
+h2, h3 {
+  margin-top: 25px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+hr {
   border: none;
-  margin: 6px;
-  cursor: pointer;
-  background-color: #eeeeee;
-  color: black;
-  transition: transform 0.2s, box-shadow 0.2s;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+  margin: 25px 0;
 }
 
-button.disponible:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px rgba(255,255,255,0.6);
-}button.pendiente {
-  background-color: gold;
-  color: black;
+/* contenedor números */
+#numeros {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  max-width: 320px;
+  margin: 20px auto;
 }
 
-button.pagado {
-  background-color: #2196f3;
-  color: white;
-  cursor: not-allowed;
-}
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
-
+/* botones */
 button {
-  padding: 10px;
-  margin: 5px;
+  padding: 12px;
   font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
+/* estados */
 .disponible {
-  background-color: #e0e0e0;
+  background: #e0e0e0;
+  color: #333;
 }
 
 .pendiente {
-  background-color: yellow;
+  background: #ffeb3b;
+  color: #333;
+}
+
+.revision {
+  background: #ff9800;
+  color: white;
 }
 
 .pagado {
-  background-color: lightblue;
+  background: #4da6ff;
+  color: white;
 }
 
-#ganador {
-  font-size: 20px;
+/* hover */
+button:hover {
+  transform: scale(1.05);
+}
+
+/* pago */
+#pago {
+  background: rgba(255,255,255,0.15);
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 320px;
+  margin: 20px auto;
+}
+
+#btnPago {
+  background: #00e676;
+  color: #003300;
   font-weight: bold;
-  color: green;
 }
