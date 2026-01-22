@@ -1,55 +1,65 @@
-<div class="header">
-  <div class="logo">
-    <div class="bolillero">
-  <div class="bola-grande">🎱</div>
-    </div>
-    <div class="bola">3</div>
-    <div class="texto-logo">Sortea</div>
-  </div>
-  <p class="slogan">El número que sale 3 veces gana</p>
-</div><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sortea3</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1>Sortea3</h1>
-<p>Elegí tu número</p>
+  <!-- FONDO -->
+  <div class="fondo"></div>
 
-<div id="numeros"></div>
+  <div class="app">
 
-<p id="mensaje"></p>
+    <!-- LOGO -->
+    <div class="logo">
+      <div class="bola-logo">3</div>
+      <h1>Sortea3</h1>
+      <p>El número que sale 3 veces gana</p>
+    </div>
 
-<div id="pago" style="display:none;">
-  <p><strong>Alias:</strong> <span id="alias"></span></p>
-  <button id="btnPago">Enviar comprobante</button>
-</div>
+    <!-- BOLILLERO VISUAL -->
+    <div class="bolillero">
+      <div class="bola bola1">8</div>
+      <div class="bola bola2">3</div>
+      <div class="bola bola3">12</div>
+    </div>
 
-<p id="vendidos">Vendidos: 0 / 20</p>
-<div class="barra">
-  <div id="progreso"></div>
-</div>
+    <!-- SORTEO -->
+    <h2>Elegí tu número</h2>
 
-<!-- BOTÓN ADMIN -->
-<button id="btnAdmin">⚙️</button>
+    <div id="numeros"></div>
 
-<!-- PANEL ADMIN -->
-<div id="panelAdmin">
-  <h2>Panel Administrador</h2>
-  <div id="listaRevision"></div>
-  <button onclick="cerrarAdmin()">Cerrar</button>
-</div>
+    <p id="vendidos">Vendidos: 0 / 20</p>
 
-<script src="config.js"></script>
-<script src="script.js"></script>
+    <div class="barra">
+      <div id="progreso"></div>
+    </div>
+
+    <p id="mensaje"></p>
+
+    <div id="pago" style="display:none;">
+      <button id="btnPago">Enviar comprobante</button>
+    </div>
+
+  </div>
+
+  <!-- BOTÓN ADMIN -->
+  <button id="btnAdmin">⚙️</button>
+
+  <!-- PANEL ADMIN -->
+  <div id="panelAdmin">
+    <h2>Panel Administrador</h2>
+    <div id="listaRevision"></div>
+    <button onclick="cerrarAdmin()">Cerrar</button>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+
 </body>
-<div class="fondo-bolillas"></div>  body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  background: radial-gradient(circle at top, #0d3b4f, #071f2a);
-}
 </html>
