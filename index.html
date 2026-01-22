@@ -82,7 +82,19 @@
 <script src="script.js"></script>
 <script src="bolillero.js"></script>
   <button id="btnAdmin" style="
-    <div id="panelAdmin" style="
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: #000;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+">
+⚙️
+  </button>
+  <div id="panelAdmin" style="
   display:none;
   position: fixed;
   top: 0;
@@ -97,18 +109,6 @@
   <h2>Panel Administrador</h2>
   <div id="listaRevision"></div>
   <button onclick="cerrarAdmin()">Cerrar</button>
-</div>
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  background: #000;
-  color: white;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 18px;
-">
-⚙️
-  </button>
+  </div>
 </body>
 </html>
