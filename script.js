@@ -55,6 +55,11 @@ const panelAdmin = document.getElementById("panelAdmin");
 const listaRevision = document.getElementById("listaRevision");
 
 btnAdmin.addEventListener("click", () => {
+  const pin = prompt("Ingresá el PIN de administrador");
+  if (pin !== CONFIG.adminPIN) {
+    alert("PIN incorrecto");
+    return;
+  }
   panelAdmin.style.display = "block";
   cargarRevision();
 });
