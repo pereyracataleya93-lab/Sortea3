@@ -1,5 +1,6 @@
 // referencias
 let vendidos = 0;
+document.getElementById("progreso").style.width = (vendidos / 20 * 100) + "%";
 const numerosDiv = document.getElementById("numeros");
 const mensaje = document.getElementById("mensaje");
 const pagoDiv = document.getElementById("pago");
