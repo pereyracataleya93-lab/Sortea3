@@ -4,19 +4,21 @@ const contador = document.getElementById("contador");
 const ganador = document.getElementById("ganador");
 
 let conteo = {};
-let terminado = false;
+let finalizado = false;
 
 btnBolilla.addEventListener("click", () => {
-  if (terminado) return;
+  if (finalizado) return;
 
   const numero = Math.floor(Math.random() * 20) + 1;
-  bolillaActual.textContent = "Salió el número: " + numero;
+
+  bolillaActual.textContent = `🎱 Salió el número ${numero}`;
 
   conteo[numero] = (conteo[numero] || 0) + 1;
-  contador.textContent = "El número " + numero + " salió " + conteo[numero] + " veces";
+
+  contador.textContent = `El ${numero} salió ${conteo[numero]} veces`;
 
   if (conteo[numero] === 3) {
-    ganador.textContent = "🎉 GANADOR: NÚMERO " + numero;
-    terminado = true;
+    ganador.textContent = `🎉 GANADOR: número ${numero}`;
+    finalizado = true;
   }
 });
