@@ -1,3 +1,4 @@
+// -------- REFERENCIAS --------
 const numerosDiv = document.getElementById("numeros");
 const mensaje = document.getElementById("mensaje");
 const pagoDiv = document.getElementById("pago");
@@ -5,10 +6,15 @@ const btnPago = document.getElementById("btnPago");
 const vendidosTxt = document.getElementById("vendidos");
 const progreso = document.getElementById("progreso");
 
+const btnAdmin = document.getElementById("btnAdmin");
+const panelAdmin = document.getElementById("panelAdmin");
+const listaRevision = document.getElementById("listaRevision");
+
+// -------- ESTADO --------
 let numeroSeleccionado = null;
 let vendidos = 0;
 
-// crear números
+// -------- CREAR NÚMEROS --------
 for (let i = 1; i <= 20; i++) {
   const btn = document.createElement("button");
   btn.textContent = i;
@@ -28,7 +34,7 @@ for (let i = 1; i <= 20; i++) {
   numerosDiv.appendChild(btn);
 }
 
-// enviar comprobante
+// -------- ENVIAR COMPROBANTE --------
 btnPago.addEventListener("click", () => {
   if (!numeroSeleccionado) return;
 
@@ -38,27 +44,25 @@ btnPago.addEventListener("click", () => {
   boton.classList.remove("pendiente");
   boton.classList.add("revision");
 
-  // WhatsApp
-  const telefono = CONFIG.telefonoAdmin;
   const texto = `Hola! Envío comprobante del número ${numeroSeleccionado} (${CONFIG.nombreSorteo})`;
-  window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(texto)}`, "_blank");
+  window.open(
+    `https://wa.me/${CONFIG.telefonoAdmin}?text=${encodeURIComponent(texto)}`,
+    "_blank"
+  );
 
   mensaje.textContent = "Número en revisión ⏳";
   pagoDiv.style.display = "none";
   numeroSeleccionado = null;
 });
 
-// ---------------- ADMIN ----------------
-
-const btnAdmin = document.getElementById("btnAdmin");
-const panelAdmin = document.getElementById("panelAdmin");
-const listaRevision = document.getElementById("listaRevision");
+// -------- ADMIN --------
 btnAdmin.addEventListener("click", () => {
   const pin = prompt("Ingresá el PIN de administrador");
   if (pin !== CONFIG.adminPIN) {
     alert("PIN incorrecto");
     return;
   }
+
   panelAdmin.style.display = "block";
   cargarRevision();
 });
@@ -94,4 +98,4 @@ function confirmarPago(boton) {
   progreso.style.width = (vendidos / 20 * 100) + "%";
 
   cargarRevision();
-}
+    }
