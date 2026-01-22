@@ -1,32 +1,4 @@
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: white;
-  text-align: center;
-}
-
-h1 {
-  margin-top: 20px;
-  font-size: 36px;
-}
-
-#numeros {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-  max-width: 320px;
-  margin: 20px auto;
-}
-
-#numeros button {
-  height: 55px;
-  font-size: 18px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
+⁹;
   font-weight: bold;
 }
 
@@ -159,83 +131,95 @@ body {
   z-index: 2;
 }
 
-/* LOGO */
-.logo {
-  margin-bottom: 20px;
+* {
+  box-sizing: border-box;
 }
 
-.bola-logo {
-  width: 90px;
-  height: 90px;
-  margin: 0 auto;
-  border-radius: 50%;
-  background: radial-gradient(circle at top left, #ffffff, #3498db, #1b4f72);
+/* ====== BODY ====== */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ====== CONTENEDOR ====== */
+.app {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 20px 90px;
+  text-align: center;
+}
+
+/* ====== LOGO ====== */
+.header {
+  margin-bottom: 30px;
+}
+
+.logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 48px;
+  gap: 15px;
+}
+
+.bola {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top left, #ffffff, #4aa3df, #0b3c5d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
   font-weight: bold;
   color: white;
+
   box-shadow:
-    inset -8px -8px 15px rgba(0,0,0,0.4),
-    inset 8px 8px 15px rgba(255,255,255,0.3),
-    0 15px 30px rgba(0,0,0,0.5);
+    inset -10px -10px 20px rgba(0,0,0,0.5),
+    inset 10px 10px 20px rgba(255,255,255,0.25),
+    0 20px 35px rgba(0,0,0,0.6);
+
+  animation: flotar 4s ease-in-out infinite;
 }
 
-.logo h1 {
-  margin: 10px 0 5px;
-  font-size: 36px;
+@keyframes flotar {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.logo p {
+.texto-logo {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.slogan {
+  margin-top: 8px;
   font-size: 16px;
   opacity: 0.85;
 }
 
-/* BOLILLERO */
-.bolillero {
-  width: 180px;
-  height: 180px;
-  margin: 30px auto;
-  border-radius: 50%;
-  background: radial-gradient(circle at top left, #ffffff, #4aa3df, #0b3c5d);
-  box-shadow:
-    inset -15px -15px 30px rgba(0,0,0,0.5),
-    inset 15px 15px 30px rgba(255,255,255,0.3),
-    0 25px 50px rgba(0,0,0,0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: flotar 4s ease-in-out infinite;
+/* ====== TITULOS ====== */
+h2 {
+  margin-top: 10px;
+  font-size: 22px;
 }
 
-.bolillero .bola {
-  position: absolute;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background: radial-gradient(circle at top left, #fff, #2ecc71);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: black;
+p {
+  margin: 8px 0;
 }
 
-.bola1 { transform: translate(-50px, -40px); }
-.bola2 { transform: translate(50px, -30px); }
-.bola3 { transform: translate(0, 60px); }
-
-@keyframes flotar {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* NÚMEROS */
+/* ====== NUMEROS ====== */
 #numeros {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
+  gap: 12px;
   max-width: 320px;
   margin: 25px auto;
 }
@@ -243,36 +227,38 @@ body {
 #numeros button {
   height: 55px;
   font-size: 18px;
-  border-radius: 12px;
+  border-radius: 14px;
   border: none;
   cursor: pointer;
   font-weight: bold;
 }
 
+/* estados */
 .disponible { background: #ecf0f1; color: #2c3e50; }
 .pendiente { background: #f1c40f; color: black; }
-.revision { background: #e74c3c; color: white; }
-.pagado { background: #3498db; color: white; }
+.revision  { background: #e74c3c; color: white; }
+.pagado    { background: #3498db; color: white; }
 
-/* MENSAJES */
+/* ====== MENSAJE ====== */
 #mensaje {
   margin: 15px;
   font-size: 18px;
 }
 
-/* PAGO */
+/* ====== PAGO ====== */
 #pago {
   background: rgba(255,255,255,0.1);
   padding: 15px;
-  border-radius: 12px;
+  border-radius: 14px;
+  width: 100%;
   max-width: 320px;
   margin: 15px auto;
 }
 
 #btnPago {
-  padding: 12px;
+  padding: 14px;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
   border: none;
   font-size: 16px;
   background: #1abc9c;
@@ -280,13 +266,18 @@ body {
   cursor: pointer;
 }
 
-/* PROGRESO */
+/* ====== PROGRESO ====== */
+#vendidos {
+  margin-top: 20px;
+}
+
 .barra {
-  width: 80%;
+  width: 100%;
   height: 18px;
   background: #aaa;
-  margin: auto;
+  margin: 10px auto;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 #progreso {
@@ -294,9 +285,10 @@ body {
   width: 0%;
   background: #2ecc71;
   border-radius: 10px;
+  transition: width 0.4s;
 }
 
-/* ADMIN */
+/* ====== BOTON ADMIN ====== */
 #btnAdmin {
   position: fixed;
   bottom: 18px;
@@ -308,9 +300,10 @@ body {
   background: black;
   color: white;
   font-size: 22px;
-  z-index: 10;
+  z-index: 1000;
 }
 
+/* ====== PANEL ADMIN ====== */
 #panelAdmin {
   display: none;
   position: fixed;
@@ -319,4 +312,4 @@ body {
   color: white;
   padding: 20px;
   z-index: 999;
-}
+  }
