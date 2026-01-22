@@ -206,3 +206,11 @@ button:active {
   background: linear-gradient(90deg, #00e676, #4da6ff);
   transition: width 0.3s;
 }
+.decoracion span {
+  animation: mover 12s infinite alternate;
+}
+
+@keyframes mover {
+  from { transform: translateY(0); }
+  to { transform: translateY(-40px); }
+}
