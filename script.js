@@ -53,7 +53,6 @@ btnPago.addEventListener("click", () => {
 const btnAdmin = document.getElementById("btnAdmin");
 const panelAdmin = document.getElementById("panelAdmin");
 const listaRevision = document.getElementById("listaRevision");
-
 btnAdmin.addEventListener("click", () => {
   const pin = prompt("Ingresá el PIN de administrador");
   if (pin !== CONFIG.adminPIN) {
