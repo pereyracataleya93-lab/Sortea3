@@ -91,3 +91,14 @@ function confirmarPago(boton) {
 
   cargarRevision();
     }
+const zonaBolillero = document.getElementById("zonaBolillero");
+const btnSortear = document.getElementById("btnSortear");
+const bolaResultado = document.getElementById("bolaResultado");
+
+btnSortear.addEventListener("click", () => {
+  const pagados = document.querySelectorAll(".pagado");
+  if (pagados.length === 0) return;
+
+  const ganador = pagados[Math.floor(Math.random() * pagados.length)];
+  bolaResultado.textContent = ganador.textContent;
+});
