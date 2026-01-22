@@ -134,3 +134,21 @@ h1 {
   font-size: 18px;
   opacity: 0.9;
 }
+body::before {
+  content: "3 8 7 5 1 9 3 8";
+  position: fixed;
+  inset: 0;
+  font-size: 120px;
+  color: rgba(255,255,255,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: mover 20s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes mover {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
