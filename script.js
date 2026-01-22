@@ -90,16 +90,15 @@ function confirmarPago(boton) {
 
   cargarRevision();
     }
-// 👉 cuando se venden todos, mostrar bolillero
-  if (vendidos === 20) {
-    document.getElementById("zonaBolillero").style.display = "block";
-  }
 const zonaBolillero = document.getElementById("zonaBolillero");
 const btnSortear = document.getElementById("btnSortear");
 const bolaResultado = document.getElementById("bolaResultado");
 
 btnSortear.addEventListener("click", () => {
-  const pagados = document.querySelectorAll(".pagado");
+  const pagados = document.querySelectorAll(".pagado");// 👉 cuando se venden todos, mostrar bolillero
+  if (vendidos === 20) {
+    document.getElementById("zonaBolillero").style.display = "block";
+  }
   if (pagados.length === 0) return;
 
   const ganador = pagados[Math.floor(Math.random() * pagados.length)];
