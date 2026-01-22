@@ -1,4 +1,5 @@
 // referencias
+let vendidos = 0;
 const numerosDiv = document.getElementById("numeros");
 const mensaje = document.getElementById("mensaje");
 const pagoDiv = document.getElementById("pago");
@@ -41,6 +42,8 @@ btnPago.addEventListener("click", () => {
   // pasar a revisión (NO pagado)
   boton.classList.remove("pendiente");
   boton.classList.add("revision");
+  vendidos++;
+document.getElementById("vendidos").textContent = `Vendidos: ${vendidos} / 20`;
 
   // WhatsApp del organizador (configurable)
   const telefonoAdmin = CONFIG.telefonoAdmin;
