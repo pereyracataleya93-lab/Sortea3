@@ -9,51 +9,45 @@
 
 <body>
 
-  <div class="app">
+  <body>
 
-    <!-- TITULO -->
-    <div class="logo">
-  <div class="bola-logo">3</div>
-  <div class="texto-logo">SORTEA</div>
+<div class="app">
+
+  <!-- LOGO -->
+  <div class="logo">
+    <div class="bola-logo">3</div>
+    <div class="texto-logo">SORTEA</div>
+  </div>
+
+  <p class="subtitulo">Elegí tu número</p>
+
+  <div id="numeros"></div>
+
+  <p id="mensaje"></p>
+
+  <div id="pago" style="display:none;">
+    <p><strong>Alias:</strong> <span id="alias"></span></p>
+    <button id="btnPago">Enviar comprobante</button>
+  </div>
+
+  <p id="vendidos">Vendidos: 0 / 20</p>
+  <div class="barra">
+    <div id="progreso"></div>
+  </div>
+
 </div>
 
-<p class="subtitulo">Elegí tu número</p>
+<!-- BOTÓN ADMIN -->
+<button id="btnAdmin">⚙️</button>
 
-    <!-- NUMEROS -->
-    <div id="numeros"></div>
+<!-- PANEL ADMIN -->
+<div id="panelAdmin">
+  <h2>Panel Administrador</h2>
+  <div id="listaRevision"></div>
+  <button onclick="cerrarAdmin()">Cerrar</button>
+</div>
 
-    <!-- MENSAJE -->
-    <p id="mensaje"></p>
+<script src="config.js"></script>
+<script src="script.js"></script>
 
-    <!-- PAGO -->
-    <div id="pago" style="display:none;">
-      <p><strong>Alias:</strong> <span id="alias"></span></p>
-      <button id="btnPago">Enviar comprobante</button>
-    </div>
-
-    <!-- VENDIDOS -->
-    <p id="vendidos">Vendidos: 0 / 20</p>
-
-    <!-- BARRA PROGRESO -->
-    <div class="barra">
-      <div id="progreso"></div>
-    </div>
-
-  </div>
-
-  <!-- BOTÓN ADMIN -->
-  <button id="btnAdmin">⚙️</button>
-
-  <!-- PANEL ADMIN -->
-  <div id="panelAdmin">
-    <h2>Panel Administrador</h2>
-    <div id="listaRevision"></div>
-    <button onclick="cerrarAdmin()">Cerrar</button>
-  </div>
-
-  <!-- SCRIPTS -->
-  <script src="config.js"></script>
-  <script src="script.js"></script>
-
-</body>
-</html>
+  </body>
