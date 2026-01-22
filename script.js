@@ -1,4 +1,3 @@
-// REFERENCIAS
 const numerosDiv = document.getElementById("numeros");
 const mensaje = document.getElementById("mensaje");
 const pagoDiv = document.getElementById("pago");
@@ -45,7 +44,7 @@ btnPago.onclick = () => {
   boton.classList.add("revision");
 
   const texto = `Hola! Envío comprobante del número ${numeroSeleccionado} (${CONFIG.nombreSorteo})`;
-  location.href = `https://wa.me/${CONFIG.telefonoAdmin}?text=${encodeURIComponent(texto)}`;
+  window.location.href = `https://wa.me/${CONFIG.telefonoAdmin}?text=${encodeURIComponent(texto)}`;
 
   mensaje.textContent = "Número en revisión ⏳";
   pagoDiv.style.display = "none";
@@ -71,9 +70,12 @@ function cargarRevision() {
   listaRevision.innerHTML = "";
   document.querySelectorAll(".revision").forEach(boton => {
     const div = document.createElement("div");
+    div.style.marginBottom = "10px";
+
     const btn = document.createElement("button");
     btn.textContent = `Confirmar Nº ${boton.textContent}`;
     btn.onclick = () => confirmarPago(boton);
+
     div.appendChild(btn);
     listaRevision.appendChild(div);
   });
@@ -82,8 +84,10 @@ function cargarRevision() {
 function confirmarPago(boton) {
   boton.classList.remove("revision");
   boton.classList.add("pagado");
+
   vendidos++;
   vendidosTxt.textContent = `Vendidos: ${vendidos} / ${CONFIG.totalNumeros}`;
   progreso.style.width = (vendidos / CONFIG.totalNumeros * 100) + "%";
+
   cargarRevision();
     }
