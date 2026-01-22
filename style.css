@@ -1,51 +1,96 @@
+* { box-sizing: border-box; }
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f2f4f8;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
   text-align: center;
 }
 
-#numeros button {
-  width: 45px;
-  height: 45px;
-  margin: 5px;
-  font-size: 16px;
+h1 {
+  margin-top: 20px;
+  font-size: 36px;
 }
 
-.disponible { background: #e0e0e0; }
-.pendiente { background: yellow; }
-.revision { background: red; color: white; }
-.pagado { background: blue; color: white; }
+#numeros {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  max-width: 320px;
+  margin: 20px auto;
+}
+
+#numeros button {
+  height: 55px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.disponible { background: #ecf0f1; color: #2c3e50; }
+.pendiente { background: #f1c40f; color: black; }
+.revision { background: #e74c3c; color: white; }
+.pagado { background: #3498db; color: white; }
+
+#mensaje { margin: 15px; font-size: 18px; }
+
+#pago {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 320px;
+  margin: 15px auto;
+}
+
+#btnPago {
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  background: #1abc9c;
+  color: white;
+  cursor: pointer;
+}
 
 #btnAdmin {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 18px;
+  right: 18px;
   width: 55px;
   height: 55px;
   border-radius: 50%;
+  border: none;
   background: black;
   color: white;
   font-size: 22px;
-  border: none;
 }
 
 #panelAdmin {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.95);
   color: white;
   padding: 20px;
+  z-index: 999;
 }
 
 .barra {
   width: 80%;
-  height: 20px;
-  background: #ccc;
+  height: 18px;
+  background: #aaa;
   margin: auto;
+  border-radius: 10px;
 }
+
 #progreso {
   height: 100%;
   width: 0%;
-  background: green;
+  background: #2ecc71;
+  border-radius: 10px;
 }
