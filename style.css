@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f4f8;
+  text-align: center;
+}
+
+#numeros button {
+  width: 45px;
+  height: 45px;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.disponible { background: #e0e0e0; }
+.pendiente { background: yellow; }
+.revision { background: red; color: white; }
+.pagado { background: blue; color: white; }
+
+#btnAdmin {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: black;
+  color: white;
+  font-size: 22px;
+  border: none;
+}
+
+#panelAdmin {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  color: white;
+  padding: 20px;
+}
+
+.barra {
+  width: 80%;
+  height: 20px;
+  background: #ccc;
+  margin: auto;
+}
+#progreso {
+  height: 100%;
+  width: 0%;
+  background: green;
+}
