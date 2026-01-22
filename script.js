@@ -90,6 +90,10 @@ function confirmarPago(boton) {
 
   cargarRevision();
     }
+// 👉 cuando se venden todos, mostrar bolillero
+  if (vendidos === 20) {
+    document.getElementById("zonaBolillero").style.display = "block";
+  }
 const zonaBolillero = document.getElementById("zonaBolillero");
 const btnSortear = document.getElementById("btnSortear");
 const bolaResultado = document.getElementById("bolaResultado");
