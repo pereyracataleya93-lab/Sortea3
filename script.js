@@ -13,7 +13,7 @@ const listaRevision = document.getElementById("listaRevision");
 aliasSpan.textContent = CONFIG.aliasPago;
 
 let numeroSeleccionado = null;
-let vendidos = 20;
+let vendidos = 0;
 // CREAR NÚMEROS
 for (let i = 1; i <= CONFIG.totalNumeros; i++) {
   const btn = document.createElement("button");
