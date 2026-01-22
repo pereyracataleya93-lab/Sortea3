@@ -3,51 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <title>Sortea3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- HEADER -->
   <div class="header">
-  <div class="logo">
-    🎱 <span>Sortea3</span>
+    <div class="logo">
+      🎱 <span>Sortea3</span>
+    </div>
+    <p class="slogan">El número que sale 3 veces gana</p>
   </div>
-  <p class="slogan">El número que sale 3 veces gana</p>
+
+  <!-- SECCIÓN SORTEO -->
+  <div class="section">
+    <h2>Sorteo activo</h2>
+    <p><strong>Premio:</strong> TV Smart 50"</p>
+    <p><strong>Precio por número:</strong> $1.000</p>
+    <p><strong>Números disponibles:</strong> 1 al 20</p>
   </div>
-  <hr>
 
-  <h2>Sorteo activo</h2>
-  <p><strong>Premio:</strong> TV Smart 50"</p>
-  <p><strong>Precio por número:</strong> $1.000</p>
-  <p><strong>Números disponibles:</strong> 1 al 20</p>
+  <!-- SECCIÓN NUMEROS -->
+  <div class="section">
+    <h3>Elegí tu número</h3>
+    <p id="mensaje"></p>
 
-  <hr>
+    <!-- CONTENEDOR DONDE EL SCRIPT CREA LOS BOTONES -->
+    <div id="numeros"></div>
+  </div>
 
-  <h3>Elegí tu número</h3>
-  <p id="mensaje"></p>
-
-  <!-- CONTENEDOR DE LOS NÚMEROS -->
-  <div id="numeros"></div>
-
-  <!-- BLOQUE DE PAGO -->
-  <div id="pago" style="display:none; margin-top:20px;">
+  <!-- SECCIÓN PAGO -->
+  <div id="pago" class="section" style="display:none;">
     <h3>Instrucciones de pago</h3>
     <p>Alias para pagar:</p>
     <strong>sortea3.alias</strong>
-
     <p>Monto: $1.000</p>
 
     <button id="btnPago">Enviar comprobante</button>
   </div>
 
-  <hr>
+  <!-- DECORACIÓN -->
+  <div class="decoracion">
+    <span>🎱</span>
+    <span>🎱</span>
+    <span>🎱</span>
+  </div>
 
   <!-- SCRIPTS (ORDEN IMPORTANTE) -->
   <script src="config.js"></script>
   <script src="script.js"></script>
-<div class="decoracion">
-  <span>🎱</span>
-  <span>🎱</span>
-  <span>🎱</span>
-</div>
+
 </body>
 </html>
