@@ -94,3 +94,43 @@ h1 {
   background: #2ecc71;
   border-radius: 10px;
 }
+.header {
+  padding: 40px 20px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.bola {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top left, #ffffff, #3498db, #1b4f72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  box-shadow: inset -8px -8px 15px rgba(0,0,0,0.4),
+              inset 8px 8px 15px rgba(255,255,255,0.3),
+              0 15px 30px rgba(0,0,0,0.5);
+}
+
+.texto-logo {
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.slogan {
+  margin-top: 10px;
+  font-size: 18px;
+  opacity: 0.9;
+}
