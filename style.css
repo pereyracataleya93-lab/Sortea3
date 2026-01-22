@@ -245,3 +245,37 @@ p {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
   }
+#zonaBolillero {
+  margin-top: 40px;
+}
+
+.bolillero {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top left, #ffffff, #4aa3df, #0b3c5d);
+  box-shadow:
+    inset -15px -15px 30px rgba(0,0,0,0.5),
+    inset 15px 15px 30px rgba(255,255,255,0.3),
+    0 25px 50px rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bola-grande {
+  font-size: 72px;
+  font-weight: bold;
+  color: white;
+}
+
+#btnSortear {
+  padding: 14px 22px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background: #e67e22;
+  color: white;
+  cursor: pointer;
+}
