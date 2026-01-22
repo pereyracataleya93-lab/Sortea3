@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Sortea3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,26 +11,27 @@
 <div class="app">
 
   <!-- LOGO -->
-  <div class="logo-pro">
-    <div class="texto-logo">Sortea</div>
-    <div class="bola-3d">3</div>
+  <div class="header">
+    <div class="logo">
+      <div class="bola">3</div>
+      <div class="texto-logo">Sortea</div>
+    </div>
+    <div class="slogan">El número que sale 3 veces gana</div>
   </div>
-  <p class="slogan">Elegí tu número y participá</p>
 
-  <!-- MENSAJE -->
-  <p id="mensaje"></p>
+  <h2>Elegí tu número</h2>
 
-  <!-- NÚMEROS -->
   <div id="numeros"></div>
 
-  <!-- PAGO -->
+  <p id="mensaje"></p>
+
   <div id="pago" style="display:none;">
     <p><strong>Alias:</strong> <span id="alias"></span></p>
     <button id="btnPago">Enviar comprobante</button>
   </div>
 
-  <!-- PROGRESO -->
   <p id="vendidos">Vendidos: 0 / 20</p>
+
   <div class="barra">
     <div id="progreso"></div>
   </div>
