@@ -3,51 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <title>Sortea3</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <body>
 
 <div class="app">
 
   <!-- LOGO -->
-  <div class="logo">
-    <div class="bola-logo">3</div>
-    <div class="texto-logo">SORTEA</div>
+  <div class="header">
+    <div class="logo">
+      <div class="bola">3</div>
+      <div class="texto-logo">SORTEA</div>
+    </div>
+    <div class="slogan">Elegí tu número · Pagá · Ganá</div>
   </div>
 
-  <p class="subtitulo">Elegí tu número</p>
-
+  <!-- NUMEROS -->
+  <h2>Elegí tu número</h2>
   <div id="numeros"></div>
 
   <p id="mensaje"></p>
 
+  <!-- PAGO -->
   <div id="pago" style="display:none;">
     <p><strong>Alias:</strong> <span id="alias"></span></p>
     <button id="btnPago">Enviar comprobante</button>
   </div>
 
+  <!-- PROGRESO -->
   <p id="vendidos">Vendidos: 0 / 20</p>
   <div class="barra">
     <div id="progreso"></div>
-   <!-- BOLILLERO -->
-<div id="zonaBolillero">
-  <div class="bolillero">
-    <div id="bolaResultado" class="bola-grande">?</div>
   </div>
-  <button id="btnSortear">🎰 SORTEAR</button>
-</div> 
+
+  <!-- 🎰 BOLILLERO -->
+  <div id="zonaBolillero" style="display:none;">
+    <h2>¡Sorteo!</h2>
+
+    <div class="bolillero">
+      <div id="bolaResultado" class="bola-grande">?</div>
+    </div>
+
+    <button id="btnSortear">🎰 SORTEAR</button>
+    <p id="resultado"></p>
   </div>
 
 </div>
 
-<!-- BOTÓN ADMIN -->
+<!-- ADMIN -->
 <button id="btnAdmin">⚙️</button>
 
-<!-- PANEL ADMIN -->
 <div id="panelAdmin">
   <h2>Panel Administrador</h2>
   <div id="listaRevision"></div>
@@ -56,5 +61,5 @@
 
 <script src="config.js"></script>
 <script src="script.js"></script>
-
-  </body>
+</body>
+</html>
