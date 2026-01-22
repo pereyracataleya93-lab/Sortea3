@@ -45,11 +45,7 @@ btnPago.addEventListener("click", () => {
   boton.classList.add("revision");
 
   const texto = `Hola! Envío comprobante del número ${numeroSeleccionado} (${CONFIG.nombreSorteo})`;
-  window.open(
-    `https://wa.me/${CONFIG.telefonoAdmin}?text=${encodeURIComponent(texto)}`,
-    "_blank"
-  );
-
+  location.href = `https://wa.me/${CONFIG.telefonoAdmin}?text=${encodeURIComponent(texto)}`;
   mensaje.textContent = "Número en revisión ⏳";
   pagoDiv.style.display = "none";
   numeroSeleccionado = null;
