@@ -6,49 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="app">
+  <div class="app">
 
-  <!-- LOGO -->
-  <div class="header">
-    <div class="logo">
-      <div class="bola">3</div>
-      <div class="texto-logo">Sortea</div>
+    <!-- TITULO -->
+    <h1>Sortea3</h1>
+    <p>Elegí tu número</p>
+
+    <!-- NUMEROS -->
+    <div id="numeros"></div>
+
+    <!-- MENSAJE -->
+    <p id="mensaje"></p>
+
+    <!-- PAGO -->
+    <div id="pago" style="display:none;">
+      <p><strong>Alias:</strong> <span id="alias"></span></p>
+      <button id="btnPago">Enviar comprobante</button>
     </div>
-    <div class="slogan">El número que sale 3 veces gana</div>
+
+    <!-- VENDIDOS -->
+    <p id="vendidos">Vendidos: 0 / 20</p>
+
+    <!-- BARRA PROGRESO -->
+    <div class="barra">
+      <div id="progreso"></div>
+    </div>
+
   </div>
 
-  <h2>Elegí tu número</h2>
+  <!-- BOTÓN ADMIN -->
+  <button id="btnAdmin">⚙️</button>
 
-  <div id="numeros"></div>
-
-  <p id="mensaje"></p>
-
-  <div id="pago" style="display:none;">
-    <p><strong>Alias:</strong> <span id="alias"></span></p>
-    <button id="btnPago">Enviar comprobante</button>
+  <!-- PANEL ADMIN -->
+  <div id="panelAdmin">
+    <h2>Panel Administrador</h2>
+    <div id="listaRevision"></div>
+    <button onclick="cerrarAdmin()">Cerrar</button>
   </div>
 
-  <p id="vendidos">Vendidos: 0 / 20</p>
+  <!-- SCRIPTS -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
 
-  <div class="barra">
-    <div id="progreso"></div>
-  </div>
-
-</div>
-
-<!-- BOTÓN ADMIN -->
-<button id="btnAdmin">⚙️</button>
-
-<!-- PANEL ADMIN -->
-<div id="panelAdmin">
-  <h2>Panel Administrador</h2>
-  <div id="listaRevision"></div>
-  <button onclick="cerrarAdmin()">Cerrar</button>
-</div>
-
-<script src="config.js"></script>
-<script src="script.js"></script>
 </body>
 </html>
