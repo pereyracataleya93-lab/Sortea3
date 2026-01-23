@@ -303,24 +303,51 @@ body {
   box-shadow: inset -8px -8px 15px rgba(0,0,0,0.4),
               inset 8px 8px 15px rgba(255,255,255,0.3),
               0 15px 30px rgba(0,0,0,0.5);
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
 }
 
-.texto-logo {
-  font-size: 42px;
+.app {
+  max-width: 420px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.bola-3d {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top left, #fff, #3498db, #1b4f72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
   font-weight: bold;
+  box-shadow: inset -6px -6px 12px rgba(0,0,0,.4),
+              inset 6px 6px 12px rgba(255,255,255,.3),
+              0 12px 25px rgba(0,0,0,.5);
 }
 
-.slogan {
-  margin-top: 10px;
-  opacity: 0.9;
-}
+.sub { opacity: .85; }
 
-/* NUMEROS */
 #numeros {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 12px;
-  margin: 30px auto;
+  margin: 25px 0;
 }
 
 #numeros button {
@@ -333,36 +360,15 @@ body {
 }
 
 .disponible { background: #ecf0f1; color: #2c3e50; }
-.pendiente { background: #f1c40f; color: black; }
+.pendiente { background: #f1c40f; }
 .revision { background: #e74c3c; color: white; }
 .pagado { background: #3498db; color: white; }
 
-/* PAGO */
-#pago {
-  background: rgba(255,255,255,0.1);
-  padding: 15px;
-  border-radius: 12px;
-  margin-top: 15px;
-}
-
-#btnPago {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  background: #1abc9c;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* PROGRESO */
 .barra {
   width: 100%;
-  height: 18px;
-  background: #aaa;
+  height: 14px;
+  background: rgba(255,255,255,.2);
   border-radius: 10px;
-  margin-top: 10px;
 }
 
 #progreso {
@@ -372,17 +378,14 @@ body {
   border-radius: 10px;
 }
 
-/* ADMIN */
 #btnAdmin {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 20px;
+  right: 20px;
   width: 55px;
   height: 55px;
   border-radius: 50%;
   border: none;
-  background: black;
-  color: white;
   font-size: 22px;
 }
 
@@ -390,7 +393,6 @@ body {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.95);
+  background: rgba(0,0,0,.95);
   padding: 20px;
-  z-index: 999;
-}
+  }
