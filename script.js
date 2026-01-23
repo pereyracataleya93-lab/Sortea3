@@ -104,6 +104,7 @@ function confirmarPago(boton) {
 
   // marcar como vendido
   boton.classList.add("pagado");
+  boton.classList.remove("revision");
 
   // actualizar vendidos SOLO si no estaba pagado
   if (!boton.dataset.contado) {
