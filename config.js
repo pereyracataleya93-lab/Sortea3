@@ -1,10 +1,9 @@
 const CONFIG = {
   nombreSorteo: "Sortea3",
-  premio: "TV Smart 50\"",
+  premio: "Premio",
   precio: 1000,
-  telefonoAdmin: "5493512438338",
+  telefonoAdmin: "5493512433338",
   aliasPago: "sortea3.alias",
   adminPIN: "1234",
-
-  totalNumeros: 20   // 👈 ACÁ
+  totalNumeros: 20
 };
