@@ -13,13 +13,12 @@
   <div class="header">
     <div class="logo">
       <div class="bola">3</div>
-      <div class="texto-logo">SORTEA</div>
+      <div class="texto-logo">Sortea</div>
     </div>
-    <div class="slogan">Elegí tu número · Pagá · Ganá</div>
+    <div class="slogan">Elegí tu número y participá</div>
   </div>
 
   <!-- NUMEROS -->
-  <h2>Elegí tu número</h2>
   <div id="numeros"></div>
 
   <p id="mensaje"></p>
@@ -31,28 +30,17 @@
   </div>
 
   <!-- PROGRESO -->
-  <p id="vendidos">Vendidos: 0 / 20</p>
+  <p id="vendidos"></p>
   <div class="barra">
     <div id="progreso"></div>
   </div>
 
-  <!-- 🎰 BOLILLERO -->
-  <div id="zonaBolillero" style="display:none;">
-    <h2>¡Sorteo!</h2>
-
-    <div class="bolillero">
-      <div id="bolaResultado" class="bola-grande">?</div>
-    </div>
-
-    <button id="btnSortear">🎰 SORTEAR</button>
-    <p id="resultado"></p>
-  </div>
-
 </div>
 
-<!-- ADMIN -->
+<!-- BOTÓN ADMIN -->
 <button id="btnAdmin">⚙️</button>
 
+<!-- PANEL ADMIN -->
 <div id="panelAdmin">
   <h2>Panel Administrador</h2>
   <div id="listaRevision"></div>
@@ -61,16 +49,5 @@
 
 <script src="config.js"></script>
 <script src="script.js"></script>
-  
-<!-- SORTEO -->
-<div id="sorteo" style="display:none;">
-  <h2>🎉 ¡Todos los números vendidos!</h2>
-
-  <div class="bolillero">
-    <div id="bolaGanadora" class="bola-grande">?</div>
-  </div>
-
-  <button id="btnSortear">🎱 SORTEAR</button>
-</div>  
 </body>
 </html>
