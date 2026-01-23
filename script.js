@@ -99,16 +99,29 @@ function cargarRevision() {
 
 // ---------------- CONFIRMAR PAGO ----------------
 function confirmarPago(boton) {
-  if (boton.classList.contains("pagado")) return;
-
+  // Cambiar estado visual
   boton.classList.remove("revision");
   boton.classList.add("pagado");
 
+  // Sumar vendidos reales
   vendidos++;
-  vendidosTxt.textContent = `Vendidos: ${vendidos} / ${total}`;
-  progreso.style.width = (vendidos / total * 100) + "%";
+
+  // Actualizar texto y barra
+  vendidosTxt.textContent = `Vendidos: ${vendidos} / ${CONFIG.totalNumeros}`;
+  progreso.style.width = (vendidos / CONFIG.totalNumeros * 100) + "%";
+
+  // Limpiar mensaje si no quedan en revisión
+  if (document.querySelectorAll(".revision").length === 0) {
+    mensaje.textContent = "";
+  }
+
+  // 👉 SI YA ESTÁ TODO VENDIDO, MOSTRAR SORTEO
+  if (vendidos === CONFIG.totalNumeros) {
+    document.getElementById("sorteo").style.display = "block";
+  }
 
   cargarRevision();
+}
 
   if (vendidos === total) {
     verificarSorteo();
