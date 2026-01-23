@@ -13,9 +13,14 @@ const btnAdmin = document.getElementById("btnAdmin");
 const panelAdmin = document.getElementById("panelAdmin");
 const listaRevision = document.getElementById("listaRevision");
 
+const sorteoDiv = document.getElementById("sorteo");
+const btnSortear = document.getElementById("btnSortear");
+const bolaGanadora = document.getElementById("bolaGanadora");
+
 // ---------------- ESTADO ----------------
 let numeroSeleccionado = null;
 let vendidos = 0;
+let yaSorteado = false;
 
 // ---------------- INICIAL ----------------
 vendidosTxt.textContent = `Vendidos: 0 / ${total}`;
@@ -28,10 +33,7 @@ for (let i = 1; i <= total; i++) {
   btn.className = "disponible";
 
   btn.addEventListener("click", () => {
-    if (
-      btn.classList.contains("pagado") ||
-      btn.classList.contains("revision")
-    ) return;
+    if (btn.classList.contains("pagado") || btn.classList.contains("revision")) return;
 
     document.querySelectorAll(".pendiente")
       .forEach(b => b.classList.remove("pendiente"));
@@ -65,6 +67,82 @@ btnPago.addEventListener("click", () => {
   numeroSeleccionado = null;
 });
 
+// ---------------- ADMIN ----------------
+btnAdmin.addEventListener("click", () => {
+  const pin = prompt("Ingresá el PIN de administrador");
+  if (pin !== CONFIG.adminPIN) {
+    alert("PIN incorrecto");
+    return;
+  }
+  panelAdmin.style.display = "block";
+  cargarRevision();
+});
+
+function cerrarAdmin() {
+  panelAdmin.style.display = "none";
+}
+
+// ---------------- REVISIÓN ----------------
+function cargarRevision() {
+  listaRevision.innerHTML = "";
+
+  document.querySelectorAll(".revision").forEach(boton => {
+    const item = document.createElement("div");
+    item.style.marginBottom = "10px";
+
+    const btn = document.createElement("button");
+    btn.textContent = `Confirmar pago Nº ${boton.textContent}`;
+    btn.onclick = () => confirmarPago(boton);
+
+    item.appendChild(btn);
+    listaRevision.appendChild(item);
+  });
+}
+
+// ---------------- CONFIRMAR PAGO ----------------
+function confirmarPago(boton) {
+  boton.classList.remove("revision");
+  boton.classList.add("pagado");
+
+  if (!boton.dataset.contado) {
+    vendidos++;
+    boton.dataset.contado = "true";
+  }
+
+  vendidosTxt.textContent = `Vendidos: ${vendidos} / ${total}`;
+  progreso.style.width = (vendidos / total * 100) + "%";
+
+  mensaje.textContent = "";
+
+  verificarSorteo();
+  cargarRevision();
+}
+
+// ---------------- SORTEO ----------------
+function verificarSorteo() {
+  if (vendidos === total) {
+    sorteoDiv.style.display = "block";
+  }
+}
+
+btnSortear.addEventListener("click", () => {
+  if (yaSorteado) return;
+  yaSorteado = true;
+
+  let contador = 0;
+  const animacion = setInterval(() => {
+    bolaGanadora.textContent =
+      Math.floor(Math.random() * total) + 1;
+    contador++;
+  }, 100);
+
+  setTimeout(() => {
+    clearInterval(animacion);
+    const ganador = Math.floor(Math.random() * total) + 1;
+    bolaGanadora.textContent = ganador;
+    alert("🎉 Número ganador: " + ganador);
+  }, 3000);
+});
 // ---------------- ADMIN ----------------
 btnAdmin.addEventListener("click", () => {
   const pin = prompt("Ingresá el PIN de administrador");
