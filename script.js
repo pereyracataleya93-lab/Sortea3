@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  alert("SCRIPT CARGADO OK");
+});document.addEventListener("DOMContentLoaded", () => {
 // ---------------- CONFIG ----------------
 const total = CONFIG.totalNumeros;
 
