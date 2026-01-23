@@ -111,7 +111,44 @@ function confirmarPago(boton) {
   cargarRevision();
 
   if (vendidos === total) {
+    verificarSorteo();
     console.log("SORTEO LISTO");
     // acá luego va el bolillero
   }
                          }
+const sorteoDiv = document.getElementById("sorteo");
+const btnSortear = document.getElementById("btnSortear");
+const bolaGanadora = document.getElementById("bolaGanadora");
+
+let yaSorteado = false;
+
+function verificarSorteo() {
+  if (vendidos === CONFIG.totalNumeros) {
+    sorteoDiv.style.display = "block";
+  }
+}
+
+// modificar confirmarPago (solo agregá esta línea al final)
+verificarSorteo();
+
+// botón sortear
+btnSortear.addEventListener("click", () => {
+  if (yaSorteado) return;
+
+  yaSorteado = true;
+
+  let contador = 0;
+  const animacion = setInterval(() => {
+    bolaGanadora.textContent =
+      Math.floor(Math.random() * CONFIG.totalNumeros) + 1;
+    contador++;
+  }, 100);
+
+  setTimeout(() => {
+    clearInterval(animacion);
+    const ganador =
+      Math.floor(Math.random() * CONFIG.totalNumeros) + 1;
+    bolaGanadora.textContent = ganador;
+    alert("🎉 Número ganador: " + ganador);
+  }, 3000);
+});
