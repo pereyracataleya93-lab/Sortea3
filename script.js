@@ -217,32 +217,95 @@ const bolaGanadora = document.getElementById("bolaGanadora");
 let yaSorteado = false;
 
 function verificarSorteo() {
-  if (vendidos === CONFIG.totalNumeros) {
-    sorteoDiv.style.display = "block";
-  }
+document.addEventListener("DOMContentLoaded", () => {
+
+const numerosDiv = document.getElementById("numeros");
+const mensaje = document.getElementById("mensaje");
+const pagoDiv = document.getElementById("pago");
+const btnPago = document.getElementById("btnPago");
+const vendidosTxt = document.getElementById("vendidos");
+const progreso = document.getElementById("progreso");
+
+const btnAdmin = document.getElementById("btnAdmin");
+const panelAdmin = document.getElementById("panelAdmin");
+const listaRevision = document.getElementById("listaRevision");
+
+let numeroSeleccionado = null;
+let vendidos = 0;
+
+// init
+document.getElementById("alias").textContent = CONFIG.aliasPago;
+vendidosTxt.textContent = `Vendidos: 0 / ${CONFIG.totalNumeros}`;
+
+// crear numeros
+for (let i = 1; i <= CONFIG.totalNumeros; i++) {
+  const btn = document.createElement("button");
+  btn.textContent = i;
+  btn.className = "disponible";
+
+  btn.onclick = () => {
+    if (btn.classList.contains("pagado") || btn.classList.contains("revision")) return;
+
+    document.querySelectorAll(".pendiente").forEach(b => b.classList.remove("pendiente"));
+    btn.classList.add("pendiente");
+    numeroSeleccionado = i;
+
+    mensaje.textContent = `Número ${i} pendiente de pago`;
+    pagoDiv.style.display = "block";
+  };
+
+  numerosDiv.appendChild(btn);
 }
 
-// modificar confirmarPago (solo agregá esta línea al final)
-verificarSorteo();
+// enviar comprobante
+btnPago.onclick = () => {
+  if (!numeroSeleccionado) return;
 
-// botón sortear
-btnSortear.addEventListener("click", () => {
-  if (yaSorteado) return;
+  const boton = numerosDiv.children[numeroSeleccionado - 1];
+  boton.classList.remove("pendiente");
+  boton.classList.add("revision");
 
-  yaSorteado = true;
+  window.open(
+    `https://wa.me/${CONFIG.telefonoAdmin}?text=${encodeURIComponent(
+      `Hola! Envío comprobante del número ${numeroSeleccionado} (${CONFIG.nombreSorteo})`
+    )}`,
+    "_blank"
+  );
 
-  let contador = 0;
-  const animacion = setInterval(() => {
-    bolaGanadora.textContent =
-      Math.floor(Math.random() * CONFIG.totalNumeros) + 1;
-    contador++;
-  }, 100);
+  mensaje.textContent = "Número en revisión ⏳";
+  pagoDiv.style.display = "none";
+  numeroSeleccionado = null;
+};
 
-  setTimeout(() => {
-    clearInterval(animacion);
-    const ganador =
-      Math.floor(Math.random() * CONFIG.totalNumeros) + 1;
-    bolaGanadora.textContent = ganador;
-    alert("🎉 Número ganador: " + ganador);
-  }, 3000);
+// admin
+btnAdmin.onclick = () => {
+  const pin = prompt("PIN administrador");
+  if (pin !== CONFIG.adminPIN) return alert("PIN incorrecto");
+  panelAdmin.style.display = "block";
+  cargarRevision();
+};
+
+window.cerrarAdmin = () => panelAdmin.style.display = "none";
+
+function cargarRevision() {
+  listaRevision.innerHTML = "";
+  document.querySelectorAll(".revision").forEach(boton => {
+    const b = document.createElement("button");
+    b.textContent = `Confirmar Nº ${boton.textContent}`;
+    b.onclick = () => confirmarPago(boton);
+    listaRevision.appendChild(b);
+  });
+}
+
+function confirmarPago(boton) {
+  boton.classList.remove("revision");
+  boton.classList.add("pagado");
+
+  vendidos++;
+  vendidosTxt.textContent = `Vendidos: ${vendidos} / ${CONFIG.totalNumeros}`;
+  progreso.style.width = (vendidos / CONFIG.totalNumeros * 100) + "%";
+
+  cargarRevision();
+}
+
 });
