@@ -1,4 +1,3 @@
-alert("main.js cargado");
 // ================= CONFIG =================
 const total = CONFIG.totalNumeros;
 
