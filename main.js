@@ -179,3 +179,32 @@ btnSortear.addEventListener("click", () => {
     alert("🎉 Número ganador: " + ganador);
   }, 3000);
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const btnSortear = document.getElementById("btnSortear");
+  const bolillero = document.getElementById("bolillero");
+  const bolaGanadora = document.getElementById("bolaGanadora");
+
+  if (!btnSortear) {
+    console.error("❌ No existe btnSortear");
+    return;
+  }
+
+  btnSortear.addEventListener("click", () => {
+    bolillero.style.display = "block";
+
+    let vueltas = 0;
+    const anim = setInterval(() => {
+      bolaGanadora.textContent =
+        Math.floor(Math.random() * CONFIG.totalNumeros) + 1;
+      vueltas++;
+    }, 100);
+
+    setTimeout(() => {
+      clearInterval(anim);
+      const ganador =
+        Math.floor(Math.random() * CONFIG.totalNumeros) + 1;
+      bolaGanadora.textContent = ganador;
+      alert("🎉 Ganador: " + ganador);
+    }, 3000);
+  });
+});
