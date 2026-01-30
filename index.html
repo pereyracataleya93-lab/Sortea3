@@ -3,81 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <title>Sortea3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="app">
+  <div class="app">
 
-  <header class="logo">
-    <div class="bola-3d">3</div>
-    <h1>SORTEA</h1>
-  </header>
+    <!-- LOGO / HEADER -->
+    <header class="header">
+      <div class="logo">
+        <div class="bola">3</div>
+        <div class="texto-logo">SORTEA</div>
+      </div>
+      <div class="slogan">Elegí tu número · Participá · Ganá</div>
+    </header>
 
-  <p class="sub">Elegí tu número y participá</p>
+    <!-- NÚMEROS -->
+    <h2>Elegí tu número</h2>
+    <div id="numeros"></div>
 
-  <div id="numeros"></div>
-<!-- SORTEO -->
-<div id="sorteo" style="margin-top:30px; text-align:center;">
-  <button id="btnSortear" style="
-    padding:14px 22px;
-    font-size:18px;
-    border-radius:12px;
-    border:none;
-    background:#f1c40f;
-    font-weight:bold;
-  ">
-    🎲 Sortear
-  </button>
+    <p id="mensaje"></p>
 
-  <div id="bolillero" style="display:none; margin-top:20px;">
-    <div id="bolaGanadora" style="
-      width:120px;
-      height:120px;
-      border-radius:50%;
-      background:#3498db;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:48px;
-      font-weight:bold;
-      color:white;
-      margin:auto;
-    ">?</div>
-  </div>
-</div>
-  <p id="mensaje"></p>
+    <!-- PAGO -->
+    <div id="pago" style="display:none;">
+      <p><strong>Alias:</strong> <span id="alias"></span></p>
+      <button id="btnPago">Enviar comprobante</button>
+    </div>
 
-  <div id="pago" style="display:none;">
-    <p><strong>Alias:</strong> <span id="alias"></span></p>
-    <button id="btnPago">Enviar comprobante</button>
-  </div>
+    <!-- PROGRESO -->
+    <p id="vendidos">Vendidos: 0 / 20</p>
+    <div class="barra">
+      <div id="progreso"></div>
+    </div>
 
-  <p id="vendidos">Vendidos: 0 / 20</p>
-
-  <div class="barra">
-    <div id="progreso"></div>
     <!-- SORTEO -->
-<div id="sorteo" style="margin-top:30px;">
-  <button id="btnSortear">🎲 Sortear</button>
+    <div id="sorteo" style="display:none; margin-top:30px;">
+      <div class="bolillero">
+        <div class="bola-grande" id="bolaGanadora">?</div>
+      </div>
+      <button id="btnSortear">🎉 Sortear</button>
+    </div>
 
-  <div id="bolillero" style="display:none; margin-top:20px;">
-    <div id="bolaGanadora">?</div>
   </div>
-</div>
+
+  <!-- BOTÓN ADMIN -->
+  <button id="btnAdmin">⚙️</button>
+
+  <!-- PANEL ADMIN -->
+  <div id="panelAdmin">
+    <h2>Panel Administrador</h2>
+    <div id="listaRevision"></div>
+    <button onclick="cerrarAdmin()">Cerrar</button>
   </div>
 
-</div>
+  <!-- CONFIG -->
+  <script src="config.js"></script>
 
-<button id="btnAdmin">⚙️</button>
+  <!-- MAIN JS (CLAVE) -->
+  <script src="main.js"></script>
 
-<div id="panelAdmin">
-  <h2>Panel Administrador</h2>
-  <div id="listaRevision"></div>
-  <button onclick="cerrarAdmin()">Cerrar</button>
-</div>
-
-<script src="config.js"></script>
-<script src="main.js"></script>
 </body>
 </html>
