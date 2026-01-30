@@ -75,4 +75,4 @@ function cargarRevision() {
     };
     listaRevision.appendChild(b);
   });
-                                                    }
+}
