@@ -146,3 +146,36 @@ btnSortear.addEventListener("click", () => {
     alert("🎉 Número ganador: " + ganador);
   }, 3000);
 });
+const btnSortear = document.getElementById("btnSortear");
+const bolillero = document.getElementById("bolillero");
+const bolaGanadora = document.getElementById("bolaGanadora");
+
+let yaSorteado = false;
+
+btnSortear.addEventListener("click", () => {
+  if (yaSorteado) return;
+
+  // opcional: validar vendidos
+  if (vendidos < CONFIG.totalNumeros) {
+    alert("Todavía no están vendidos todos los números");
+    return;
+  }
+
+  bolillero.style.display = "flex";
+  yaSorteado = true;
+
+  let vueltas = 0;
+  const anim = setInterval(() => {
+    bolaGanadora.textContent =
+      Math.floor(Math.random() * CONFIG.totalNumeros) + 1;
+    vueltas++;
+  }, 100);
+
+  setTimeout(() => {
+    clearInterval(anim);
+    const ganador =
+      Math.floor(Math.random() * CONFIG.totalNumeros) + 1;
+    bolaGanadora.textContent = ganador;
+    alert("🎉 Número ganador: " + ganador);
+  }, 3000);
+});
