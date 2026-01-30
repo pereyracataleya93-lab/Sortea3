@@ -177,17 +177,23 @@ btnSortear.addEventListener("click", () => {
       Math.floor(Math.random() * CONFIG.totalNumeros) + 1;
     bolaGanadora.textContent = ganador;
     alert("🎉 Número ganador: " + ganador);
-  }, 3000);
-});
+const TOTAL_NUMEROS = 20;
+
 document.addEventListener("DOMContentLoaded", () => {
+  const contenedor = document.getElementById("numeros");
+
+  // ===== CREAR NUMEROS =====
+  for (let i = 1; i <= TOTAL_NUMEROS; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    btn.className = "numero";
+    contenedor.appendChild(btn);
+  }
+
+  // ===== SORTEO =====
   const btnSortear = document.getElementById("btnSortear");
   const bolillero = document.getElementById("bolillero");
   const bolaGanadora = document.getElementById("bolaGanadora");
-
-  if (!btnSortear) {
-    console.error("❌ No existe btnSortear");
-    return;
-  }
 
   btnSortear.addEventListener("click", () => {
     bolillero.style.display = "block";
@@ -195,14 +201,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let vueltas = 0;
     const anim = setInterval(() => {
       bolaGanadora.textContent =
-        Math.floor(Math.random() * CONFIG.totalNumeros) + 1;
+        Math.floor(Math.random() * TOTAL_NUMEROS) + 1;
       vueltas++;
     }, 100);
 
     setTimeout(() => {
       clearInterval(anim);
       const ganador =
-        Math.floor(Math.random() * CONFIG.totalNumeros) + 1;
+        Math.floor(Math.random() * TOTAL_NUMEROS) + 1;
       bolaGanadora.textContent = ganador;
       alert("🎉 Ganador: " + ganador);
     }, 3000);
